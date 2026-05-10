@@ -28,34 +28,26 @@ finish-args:
   # Cursor theme passthrough
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 
-  # theme passthrough
+  # Theme
   - --filesystem=xdg-config/gtk-3.0:ro
   - --filesystem=xdg-config/gtk-4.0:ro
   - --filesystem=xdg-data/themes:ro
   - --filesystem=~/.themes:ro
 
-  # dconf / GSettings access
-  - --filesystem=xdg-run/dconf:ro
-  - --filesystem=~/.config/dconf:ro
-  - --talk-name=ca.desrt.dconf
-  - --env=DCONF_PROFILE=user
+  # XDG Desktop Portals
+  - --talk-name=org.freedesktop.portal.Settings
+  - --talk-name=org.freedesktop.portal.Notification
+  - --talk-name=org.freedesktop.portal.Secret
 
-  # D-Bus: notifications & tray
-  - --talk-name=org.freedesktop.Notifications
+  # Tray
   - --talk-name=org.kde.StatusNotifierWatcher
-  - --talk-name=com.canonical.AppMenu.Registrar
 
-  # D-Bus: credential storage (keychain)
-  - --talk-name=org.freedesktop.secrets
-  - --talk-name=org.kde.kwalletd5
-  - --talk-name=org.kde.kwalletd6
-
-  # D-Bus: screen saver / power management
-  - --talk-name=org.freedesktop.ScreenSaver
+  # D-Bus: power management
   - --system-talk-name=org.freedesktop.UPower
   - --system-talk-name=org.freedesktop.login1
 
 modules:
+  - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
   - shared-modules/squashfs-tools/squashfs-tools.json
 
   - name: beeper

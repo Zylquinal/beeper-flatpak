@@ -7,6 +7,8 @@ Messenger, Twitter/X DMs, LinkedIn, Slack, Discord, and more.
 > **Disclaimer**: This package is not verified by, affiliated with, or
 > supported by Automattic, Inc.
 
+![Beeper screenshot](assets/screenshot-1.png)
+
 ## Structure
 
 | File | Purpose |

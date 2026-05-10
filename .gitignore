@@ -1,0 +1,7 @@
+# Flatpak builder output
+build-dir/
+.flatpak-builder/
+repo/
+
+# Downloaded AppImages (only kept during build)
+*.AppImage

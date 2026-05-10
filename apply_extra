@@ -1,0 +1,20 @@
+#!/bin/bash
+set -e
+
+# Both --appimage-extract and --appimage-offset internally read /proc/self/exe,
+# which is unavailable in the apply_extra restricted environment.
+# Instead, find the squashfs superblock offset by scanning for its magic bytes
+# (little-endian: 'hsqs') using Python, then extract with unsquashfs.
+
+offset=$(python3 -c "
+import sys
+data = open('beeper.AppImage', 'rb').read(2 * 1024 * 1024)
+idx = data.rfind(b'hsqs')
+if idx < 0:
+    sys.exit('squashfs magic not found in first 2MB')
+print(idx)
+")
+
+unsquashfs -quiet -no-progress -offset "$offset" beeper.AppImage
+mv squashfs-root/* .
+rm -rf squashfs-root beeper.AppImage

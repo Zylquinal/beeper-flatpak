@@ -71,18 +71,3 @@ flatpak run com.automattic.beeper
 git add com.automattic.beeper.yml com.automattic.beeper.metainfo.xml
 git commit -m "Update to Beeper X.Y.Z"
 ```
-
-## Permissions
-
-| Permission | Reason |
-|------------|--------|
-| `--share=network` | Required for messaging |
-| `--share=ipc` | Electron multi-process IPC |
-| `--socket=wayland` + `--socket=fallback-x11` | Display (prefers native Wayland) |
-| `--socket=pulseaudio` | Audio notifications / calls |
-| `--device=dri` | GPU acceleration |
-| `--filesystem=xdg-download` | File sharing / downloads |
-| `--filesystem=xdg-config/gtk-3.0`, `~/.themes` | GTK theme passthrough |
-| `--filesystem=xdg-run/dconf`, `--talk-name=ca.desrt.dconf` | GSettings / theme name lookup |
-| `--talk-name=org.freedesktop.secrets` etc. | Keychain / credential storage |
-| `--talk-name=org.kde.StatusNotifierWatcher` | System tray icon |

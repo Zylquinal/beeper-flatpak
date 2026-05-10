@@ -22,9 +22,6 @@ finish-args:
   # Audio
   - --socket=pulseaudio
 
-  # File access
-  - --filesystem=xdg-download
-
   # Cursor theme passthrough
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
 

@@ -84,9 +84,9 @@ modules:
       - type: extra-data
         filename: beeper.AppImage
         only-arches: [x86_64]
-        url: https://beeper-desktop.download.beeper.com/builds/Beeper-4.2.1004-x86_64.AppImage
-        sha256: 266783fe0541763e936fb63d2f8dd5d96a05830df2f6ad718888c5ef6dc99ae4
-        size: 271592613
+        url: https://beeper-desktop.download.beeper.com/builds/Beeper-4.3.340-x86_64.AppImage
+        sha256: cb2d7e1a69f30d902bd3ca9c9f9020ead48e459bcc20ef8b0cbb0460b82b0dee
+        size: 263938833
         x-checker-data:
           type: rotating-url
           url: https://api.beeper.com/desktop/download/linux/x64/stable/com.automattic.beeper.desktop
@@ -96,9 +96,9 @@ modules:
       - type: extra-data
         filename: beeper.AppImage
         only-arches: [aarch64]
-        url: https://beeper-desktop.download.beeper.com/builds/Beeper-4.2.1004-arm64.AppImage
-        sha256: 7ffded251ada993553f635c1c424b1990f8d01aa2fc0aa4b417d289222c366be
-        size: 274554345
+        url: https://beeper-desktop.download.beeper.com/builds/Beeper-4.3.340-arm64.AppImage
+        sha256: d7644ce078572140dfb88f65d87e8792a7e9b44600a38a60bc6a7d5f50d67254
+        size: 265979825
         x-checker-data:
           type: rotating-url
           url: https://api.beeper.com/desktop/download/linux/arm64/stable/com.automattic.beeper.desktop
